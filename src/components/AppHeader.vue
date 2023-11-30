@@ -3,7 +3,7 @@ export default {
     name: "AppHeader",
     data() {
         return {
-            head: ["home", "chi siamo", "birrerie"]
+            contacts: ["home", "chi siamo", "birrerie"]
         }
     }
 }
@@ -11,9 +11,9 @@ export default {
 
 <template>
     <section class="container">
-        <h1>Logo</h1>
+        <img src="/img/logo.png" alt="logo">
     <div>
-        <a v-for="element in head" href="#">{{ element.toUpperCase() }}</a>
+        <a v-for="element in contacts" href="#">{{ element.toUpperCase() }}</a>
     </div>
     </section>
     
@@ -26,12 +26,18 @@ export default {
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 a {
     margin-left: 16px;
     text-decoration: none;
     color: white;
+    font-weight: 600;
+}
+
+img {
+    width: 12%;
 }
 
 </style>
