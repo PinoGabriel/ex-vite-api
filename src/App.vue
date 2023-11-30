@@ -1,4 +1,4 @@
-<script >
+<script>
 import AppHeader from './components/AppHeader.vue'
 import AppJumbo from './components/AppJumbo.vue'
 import AppBirraCard from './components/AppBirraCard.vue'
@@ -28,11 +28,13 @@ export default {
     <AppHeader />
     <AppJumbo />
     <main>
-        <AppBirraCard v-for="element in store.birre" :info="element"/>
+        <AppBirraCard v-for="element in store.birre" :card="element"/>
     </main>
     <footer>
 
     </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
