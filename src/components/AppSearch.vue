@@ -8,6 +8,11 @@ export default {
             store
         }
     },
+    methods: {
+        io() {
+            console.log(this.store.apiUrl);
+        }
+    }
 }
 
 </script>
@@ -16,11 +21,12 @@ export default {
 
 <template>
     <div class="container">
-        <select v-model="store.searchStrings">
+        <select v-model="store.searchStrings" @change="io()">
             <option value="" disabled selected>Seleziona un'opzione</option>
             <option value="1">name</option>
             <option value="2">city</option>
             <option value="3">country</option>
+            <option value="4">state_province</option>
         </select>
     </div>
 

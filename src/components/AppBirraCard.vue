@@ -34,6 +34,13 @@ export default {
             </div>
         </div>
 
+        <div v-if="store.searchStrings === '4'" class="beerMargin">
+            <div>
+                <h2>Stato in provincia di:</h2>
+                <p class="my">{{ card.state_province }}</p>
+            </div>
+        </div>
+
     </div>
 </template>
 

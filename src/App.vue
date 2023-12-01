@@ -39,17 +39,3 @@ export default {
 </template>
 
 <style scoped></style>
-
-getCharacters() {
-    let indirizzo = this.store.apiUrl;
-
-    if (this.store.searchString.length) {
-        indirizzo += `?name=${this.store.searchString}`;
-    }
-
-    console.log("Richiama: ", indirizzo);
-
-    axios.get(indirizzo).then(risultato => {
-        // v. anche risultato.data.info 
-        this.store.personaggi = risultato.data.results;
-    })
