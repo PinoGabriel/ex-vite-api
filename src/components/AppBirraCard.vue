@@ -1,26 +1,39 @@
 <script>
+import { store } from '../store.js'
 export default {
     name: "AppBirraCard",
-    props: ["card"]
+    props: ["card"],
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
 <template>
     <div class="container">
-        <div class="beerMargin">
-            <div class="w-33">
-                <h2>La Nostra Birra</h2>
+        <div v-if="store.searchStrings === '1'" class="beerMargin">
+            <div>
+                <h2>Nome della birra</h2>
                 <h3 class="my"> {{ card.name }}</h3>
             </div>
-            <div class="w-33">
-                <h2>Ci trovi qui</h2>
+        </div>
+
+        <div v-if="store.searchStrings === '2'" class="beerMargin">
+            <div>
+                <h2>Città</h2>
                 <p class="my">{{ card.city }}</p>
             </div>
+        </div>
+
+        <div v-if="store.searchStrings === '3'" class="beerMargin">
             <div>
                 <h2>Nazione di provenienza</h2>
                 <p class="my">{{ card.country }}</p>
             </div>
         </div>
+
     </div>
 </template>
 
@@ -31,10 +44,8 @@ export default {
 }
 
 .beerMargin {
-    margin: 20px;
+    margin: 20px 0;
     border: 1px solid red;
-    display: flex;
-    justify-content: space-between;
 }
 
 .w-33 {
